@@ -1,0 +1,217 @@
+
+html {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    
+}
+
+h1 {
+    font-size: 30px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+
+
+p {
+    color: #696969;
+    padding-bottom: 20px;
+    text-align: justify;
+}
+
+img {
+    width: 100%;
+}
+
+a {
+    font-size: 15px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 30px;
+    color: #fff;
+    background-color: #5F5AF3;
+    border-radius: 5px;
+}
+
+a:hover {
+    background-color: #4BC1A1;
+}
+
+section {
+    height: 800px;
+    
+}
+
+.head-bg {
+    background: url("images/header-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 90px;
+    
+}
+.special-color {
+    color: #EC4C76;
+    font-size: 40px;
+    font-weight: 700;
+}
+
+.half {
+    width: 40%;
+    float: left;
+    margin-left: 2%;
+    padding-left: 3%;
+}
+.biography {
+    background: url("images/biography-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 90px;
+}
+
+.biography h1 {
+    font-weight: 600;
+}
+
+
+.latest-work {
+    background: url("images/latest-work-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top:10px;
+    height: 600px;
+}
+
+.center-align {
+    text-align: center;
+    padding-bottom: 20px;
+    
+}
+
+
+.img-gallery {
+    width: 350px;
+    height: 350px;
+    float: left;
+    margin-left: 5%;
+}
+
+
+.client {
+    padding-top:20px;
+    background: url("images/footer-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 700px;
+}
+
+.client span.normal{
+    color: #696969;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.client p {
+    font-size: 20px;
+    font-weight: 400;
+    color: #0d0d0d;
+    position: relative;
+}
+
+
+.client p::before {
+    content: '"' ;
+}
+
+.client p::after {
+    content: '"' ;
+}
+
+
+.message {
+    margin: 0 300px;
+    height: 200px;
+    width: 60%;
+    background-color: #EC4F90;
+    border-radius: 10px;
+    
+}
+
+
+.message h4 {
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.message p {
+    color: #fff;
+    padding-top: 10px;
+    font-weight: 700;
+    text-align: center;
+}
+
+
+.extra{
+    background: url("images/biography-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 90px;
+    height: 300px;
+}
+
+
+.one-line {
+    background-color: #F35A6F;
+    height: 5px;
+    width: 100px;
+    margin: 0 200px 0px 600px;
+
+}
+
+.special-work h2{
+    margin-top: 5px;
+    text-align: center;
+    font-weight: 700;
+    color: #38E1A0;
+}
+
+
+.special-work h2::before{
+    content: '🙂';
+}
+
+
+.special-work a{
+    margin: 0 200px 100px 600px;
+    background-image: linear-gradient(140deg,#38E1A0, #5F5AF3 );
+}
+
+.special-work a::after{
+    content: '😺';
+}
+
+footer {
+    text-align: center;
+    color: #696969;
+}
+
+
+
