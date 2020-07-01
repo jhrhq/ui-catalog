@@ -213,5 +213,15 @@ footer {
     color: #696969;
 }
 
+.fb-link {
+    background: none;
+    color: #696969;
+    padding-left: 2px;
+}
+
+.fb-link:hover{
+    background: none;
+}
+
 
 
