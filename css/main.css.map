@@ -1,8 +1,14 @@
 {
     "version": 3,
-    "mappings": "",
+    "mappings": "AKiDA;;;EAGE;ACpDF,MAAM,EAAE,SAAS,EAAE,KAAK;EACpB,AAAA,kBAAkB,CAAC;IACnB,OAAO,EAAE,IAAI;IACb,aAAa,EAAE,IAAI,CAAC,GAAG,CAAC,uBAAyB,CAAC,GAAG,CAAC,kBAAkB;GA4B3E;EA9BG,AAKA,kBALkB,CAKlB,OAAO,CAAC;IACJ,WAAW,EAAE,MAAM;IACnB,UAAU,EAAE,OAAO;GACtB;EARD,AASA,kBATkB,CASlB,KAAK,CAAC;IACF,WAAW,EAAE,KAAK;IAClB,UAAU,EAAE,IAAI;GACnB;EAZD,AAcA,kBAdkB,CAclB,YAAY,CAAC;IACT,QAAQ,EAAE,KAAK;IACf,WAAW,EAAE,KAAK;IAClB,UAAU,EAAE,OAAO;GACtB;EAlBD,AAoBA,kBApBkB,CAoBlB,aAAa,CAAC;IACV,QAAQ,EAAE,KAAK;IACf,WAAW,EAAE,KAAK;GAErB;EAxBD,AA0BA,kBA1BkB,CA0BlB,OAAO,CAAC;IACJ,WAAW,EAAE,MAAM;IACnB,UAAU,EAAE,OAAO;GACtB",
     "sources": [
-        "../sass/main.scss"
+        "../sass/main.scss",
+        "../sass/abstracts/_abstract.scss",
+        "../sass/abstracts/variables/_colors.scss",
+        "../sass/abstracts/variables/_typography.scss",
+        "../sass/abstracts/variables/_structure.scss",
+        "../sass/abstracts/mixins/_mixins.scss",
+        "../sass/outer_layout/_bothAside.scss"
     ],
     "names": [],
     "file": "main.css"

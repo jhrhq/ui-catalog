@@ -8,35 +8,15 @@
 
 html {
     // defines what 1 rem is
-    font-size: 62.5%;
-    @include respond (big-desktop) {
-       font-size: 75%;
-    }
-
-    @include respond (tab-land) {
-       font-size: 56.25%;
-    }
-
-    @include respond (1080) {
-       font-size: 50%;
-    }
-
-    @include respond (tab-port) {
-       font-size: 40%;
-    }
-    @include respond (phone) {
-       font-size: 40%;
-    }
+    font-size: clamp(12px, calc(.8rem + .25vw), 20px);
+    font-weight: 400;
+    line-height: 1.7
 
 }
 
 body {
     box-sizing: border-box;
-    padding: 3rem;
-
-      @include respond (tab-port) {
-       padding: 0;
-    }
+    padding: 1rem;
 
 }
 

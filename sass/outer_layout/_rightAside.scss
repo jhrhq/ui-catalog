@@ -1,0 +1,23 @@
+@media (min-width: 800px) {
+    .layout__right {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 300px;
+    
+     .header {
+        grid-column: 1 / -1;
+        background: #d6d6d6;
+    }
+    .main {
+        grid-column: 1 / 2;
+        background: #fff;
+    }
+    .aside__right {
+        background: #bbbbbb;
+        height: 100%;
+    }
+    .footer {
+        grid-column: 1 / -1;
+        background: #dadada;
+    }
+}
+}
