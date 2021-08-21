@@ -21,11 +21,10 @@ footer {
 
 @media (min-width: 800px) {
   .wrapper__left, .wrapper__right {
-    gap: 2em;
+    gap: 0 2em;
   }
   .wrapper__right {
     grid-template-columns: minmax(0, 1fr) 300px;
-    gap: 2em;
   }
   .wrapper__right .main {
     grid-column: 1 / 2;
@@ -57,7 +56,6 @@ footer {
   }
   .wrapper__both {
     grid-template-columns: minmax(140px, auto) 1fr minmax(140px, auto);
-    gap: 2em;
   }
   .wrapper__both .main {
     grid-area: 2 / 2 / 3;
