@@ -2,31 +2,71 @@
 in this case your child elements sidebar should be 
 1/2 and other one must be 1/4
 */
+.wrapper {
+  max-width: 1200px;
+  max-height: 100vh;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 100%;
+  padding: 1em;
+}
+
+header,
+main,
+.left,
+.right,
+footer {
+  grid-column: 1 / -1;
+}
+
 @media (min-width: 800px) {
-  .layout__bothAside {
-    display: grid;
-    grid-template: auto 1fr auto/minmax(140px, 1fr) 2fr minmax(140px, 1fr);
+  .wrapper__left, .wrapper__right {
+    gap: 2em;
   }
-  .layout__bothAside .header {
-    grid-column: 1 / -1;
-    background: #d6d6d6;
+  .wrapper__right {
+    grid-template-columns: minmax(0, 1fr) 300px;
+    gap: 2em;
   }
-  .layout__bothAside .main {
+  .wrapper__right .main {
+    grid-column: 1 / 2;
+    background: #fff;
+  }
+  .wrapper__right .left {
+    display: none;
+  }
+  .wrapper__right .right {
+    grid-column: 2 / 3;
+    background: #bbbbbb;
+    height: 100%;
+  }
+  .wrapper__left {
+    grid-template-columns: 300px minmax(0, 1fr);
+  }
+  .wrapper__left .main {
     grid-column: 2 / 3;
     background: #fff;
   }
-  .layout__bothAside .aside__left {
-    grid-row: 2 / 3;
+  .wrapper__left .left {
+    background: #bbbbbb;
+    height: 100%;
     grid-column: 1 / 2;
-    background: #ffcdcd;
+    grid-row: 2;
   }
-  .layout__bothAside .aside__right {
-    grid-row: 2 / 3;
-    grid-column: 3 / 4;
+  .wrapper__left .right {
+    display: none;
   }
-  .layout__bothAside .footer {
-    grid-column: 1 / -1;
-    background: #cecece;
+  .wrapper__both {
+    grid-template-columns: minmax(140px, auto) 1fr minmax(140px, auto);
+    gap: 2em;
+  }
+  .wrapper__both .main {
+    grid-area: 2 / 2 / 3;
+  }
+  .wrapper__both .left {
+    grid-area: 2 / 1 / 2;
+  }
+  .wrapper__both .right {
+    grid-area: 2 / 3 / 4;
   }
 }
 /*# sourceMappingURL=main.css.map */
