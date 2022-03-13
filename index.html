@@ -23,32 +23,32 @@
     <header class="mb-5">
       <div class="container">
         <!-- navbar -->
-        <!-- <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+        <nav class="navbar navbar-expand-lg navbar-light ">
           <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-              <img src="images/logo.png" alt="" />
-            </a>
-
+            <a class="navbar-brand" href="#">Convention</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
-                    >Home</a
-                  >
+                  <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Shoes</a>
+                  <a class="nav-link" href="#">About Us</a>
+                </li>
+                
+                <li class="nav-item">
+                  <a class="nav-link"  href="#" >Contact</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Backpacks</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Subscribe</a>
+                  <a class="nav-link"  href="#" >Subscribe</a>
                 </li>
               </ul>
+             
             </div>
           </div>
-        </nav> -->
+        </nav>
       </div>
       <!-- slider -->
       <div
@@ -132,11 +132,75 @@
     </header>
     <!-- main -->
     <main>
+      <!-- extra design -->
+      <section>
+        
+        <div class="container mt-4 mb-5">
+         
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-12 d-flex align-items-center justify-content-center flex-column ">
+             <div class=" mb-3 mb-md-4 p-md-2">
+              <h2>Why Us</h2>
+              <p>We are offering best management system for ever</p>
+              <a class="btn btn-primary">Explore More</a>
+             </div>
+            </div>
+            <div class="col-lg-8 col-md-6 col-12 position-relative">
+              
+              <div class="row g-4">
+                <div class="col-sm-6 ">
+                  <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                      <h5 class="card-title">Special Treatment</h5>
+                      <p class="card-text">There are many options for you visiting our facility.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 ">
+                  <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                      <h5 class="card-title">Floor Plans</h5>
+                      <p class="card-text">The facility offers largest ballroom in the the country</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 ">
+                  <div class="card shadow-sm border-0">
+                    <div class="card-body ">
+                      <h5 class="card-title">Art Collection</h5>
+                      <p class="card-text">You must admire the craftsmanship and creativity of its collection.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-6 ">
+                  <div class="card shadow-sm border-0">
+                    <div class="card-body">
+                      <h5 class="card-title">Safety</h5>
+                      <p class="card-text">Please remember to keep your physical distance from other guests.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="toast-container position-absolute top-0 end-0">
+                  <div class="toast  align-items-center" role="alert" aria-live="assertive" aria-atomic="false " data-autohide="true">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                       A toast message.
+                     </div>
+                      <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <!-- package -->
-      <section class="mb-5 pt-5">
+      <section class="pt-md-2">
         <div class="container">
-          <h2 class="text-center mb-5">Our package</h2>
-          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-5 pt-5 ">
+          <h2 class="text-center mb-md-5 mb-lg-5">Our package</h2>
+          <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-md-5 mt-lg-5  ">
             <div class="col pb-4">
               <div class="card h-100 border-0">
                 <div class="card-body custom-color">
@@ -145,7 +209,7 @@
                   <p class="card-text">
                     For most businesses event like book fair, craft fair.
                   </p>
-                  <ul>
+                  <ul class="list-extra-style">
                     <li>Limited space acces</li>
                     <li>Security facility</li>
                     <li>event support</li>
@@ -166,7 +230,7 @@
                   <p class="card-text">
                     For weddings with basic plan and limited item
                   </p>
-                  <ul>
+                  <ul class="list-extra-style">
                     <li>Full space access</li>
                     <li>Food arrangement</li>
                     <li>mangement support</li>
@@ -194,7 +258,7 @@
                   <h3 class="card-title fw-bold ">$800</h3>
                   <h5 class="fw-bold">Wedding plus</h5>
                   <p class="card-text">For most weddings with premium plans</p>
-                  <ul>
+                  <ul class="list-extra-style">
                     <li>Full space access</li>
                     <li>Dedicated team</li>
                     <li>Buffet food</li>
@@ -213,7 +277,7 @@
                   <h3 class="card-title fw-bold">$1200</h3>
                   <h5 class="fw-bold">Corporate event</h5>
                   <p class="card-text">For most corporate business events</p>
-                  <ul>
+                  <ul class="list-extra-style">
                     <li>Full space access</li>
                     <li>Dedicated team</li>
                     <li>Buffet food</li>
@@ -231,10 +295,10 @@
       </section>
 
       <!-- accordion -->
-      <section class="mb-5 pt-5">
+      <section class="mb-md-5">
         <div class="container">
-          <h2 class="text-center m-5">Happy Clients</h2>
-          <div class="row">
+          <h2 class="text-center mb-4 mt-5 m-md-4">Happy Clients</h2>
+          <div class="row pt-4">
             <div class="col-12 col-md-6 col-lg-6 d-flex align-items-center justify-content-center">
               <div class=" pb-5 p-md-5">
                 <img class="img-fluid" src="images/people.png" alt="">

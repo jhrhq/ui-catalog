@@ -9,7 +9,7 @@ li {
   padding: 0;
 }
 
-li {
+ul.list-extra-style li {
   background-image: url(icons/listicon.svg);
   background-repeat: no-repeat;
   margin-bottom: 0.625rem;
@@ -49,6 +49,11 @@ ul {
 
 .btn-custom {
   background: #fdf4fa;
+}
+/* toast */
+
+.toast:not(.show) {
+  display: block !important;
 }
 
 /* media query for card extra part */
