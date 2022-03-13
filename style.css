@@ -1,3 +1,66 @@
 body {
-  background: red;
+  font-family: "Roboto", sans-serif;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  background-image: url(icons/listicon.svg);
+  background-repeat: no-repeat;
+  margin-bottom: 0.625rem;
+  padding-left: 30px;
+}
+
+/* li {
+  padding: 0.3em 0 1em 40px;
+  background-image: url(icons/listicon.svg) no-repeat;
+} */
+
+.custom-color > p,
+ul {
+  color: #848199;
+}
+
+.badge-extra {
+  z-index: 1000;
+  left: 82% !important;
+  top: -2.5rem !important;
+}
+
+.pro-feature {
+  position: absolute;
+  box-shadow: 0px 42px 34px rgba(63, 135, 245, 0.25);
+  border-radius: 1.625rem;
+  top: -2.35rem;
+}
+.pro-feature ul > li {
+  color: #fff;
+  background-image: url(icons/listiconwhite.svg);
+}
+
+.card-body {
+  padding: 2rem 1rem 1rem !important;
+}
+
+.btn-custom {
+  background: #fdf4fa;
+}
+
+/* media query for card extra part */
+
+@media (max-width: 768px) {
+  .badge-extra {
+    z-index: 1000;
+    left: 82% !important;
+    top: -0.3rem !important;
+  }
+
+  .pro-feature {
+    position: static;
+  }
 }
