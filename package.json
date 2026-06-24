@@ -1,0 +1,20 @@
+{
+  "name": "ui-catalog",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev:server": "vite",
+    "dev:sass": "sass --watch public/apps/:public/apps/ --no-source-map --style=expanded",
+    "dev": "concurrently \"pnpm dev:server\" \"pnpm dev:sass\"",
+    "build:sass": "sass public/apps/:public/apps/ --no-source-map --style=compressed",
+    "build:vite": "vite build",
+    "build": "pnpm build:sass && pnpm build:vite",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.3",
+    "sass": "^1.101.0",
+    "vite": "^8.1.0"
+  }
+}

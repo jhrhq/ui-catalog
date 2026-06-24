@@ -1,0 +1,974 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UI Studio — Layout Engineering Hub</title>
+    <style>
+      :root {
+        --bg-main: #090d16;
+        --bg-card: rgba(22, 29, 49, 0.7);
+        --bg-card-hover: rgba(30, 41, 69, 0.9);
+        --border-color: rgba(51, 65, 85, 0.4);
+        --border-hover: #38bdf8;
+        --text-primary: #f8fafc;
+        --text-secondary: #94a3b8;
+        --text-muted: #64748b;
+        --accent: #38bdf8;
+        --glow: rgba(56, 189, 248, 0.15);
+
+        /* Tech stack badge colors */
+        --tag-html: #e34c26;
+        --tag-css: #264de4;
+        --tag-sass: #cc6699;
+        --tag-bs: #7952b3;
+        --tag-grid: #10b981;
+        --tag-flex: #a855f7;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family:
+          system-ui,
+          -apple-system,
+          BlinkMacSystemFont,
+          "Segoe UI",
+          Roboto,
+          sans-serif;
+        background-color: var(--bg-main);
+        color: var(--text-primary);
+        min-height: 100vh;
+        padding: 4rem 2rem;
+        line-height: 1.6;
+        background-image:
+          radial-gradient(
+            circle at 15% 15%,
+            rgba(56, 189, 248, 0.04) 0%,
+            transparent 40%
+          ),
+          radial-gradient(
+            circle at 85% 65%,
+            rgba(168, 85, 247, 0.03) 0%,
+            transparent 40%
+          );
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+      }
+
+      header {
+        margin-bottom: 4rem;
+        position: relative;
+      }
+
+      .header-content {
+        max-width: 700px;
+      }
+
+      header h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        letter-spacing: -0.04em;
+        line-height: 1.1;
+        margin-bottom: 1rem;
+      }
+
+      header h1 span {
+        background: linear-gradient(to right, #38bdf8, #a855f7);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      header p {
+        color: var(--text-secondary);
+        font-size: 1.2rem;
+        font-weight: 400;
+      }
+
+      .stats-bar {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid var(--border-color);
+        padding: 0.5rem 1.25rem;
+        border-radius: 9999px;
+        font-size: 0.85rem;
+        font-weight: 500;
+        backdrop-filter: blur(8px);
+      }
+
+      .stats-item {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .stats-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--accent);
+        border-radius: 50%;
+        box-shadow: 0 0 8px var(--accent);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+        gap: 2rem;
+      }
+
+      .card {
+        background: var(--bg-card);
+        border: 1px solid var(--border-color);
+        border-radius: 16px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        backdrop-filter: blur(12px);
+      }
+
+      .card:hover {
+        transform: translateY(-6px);
+        background: var(--bg-card-hover);
+        border-color: var(--border-hover);
+        box-shadow:
+          0 20px 40px -15px rgba(0, 0, 0, 0.5),
+          0 0 20px var(--glow);
+      }
+
+      /* Screenshot Container */
+      .screenshot-wrapper {
+        position: relative;
+        width: 100%;
+        padding-top: 56.25%; /* 16:9 Aspect Ratio */
+        background: #111827;
+        border-bottom: 1px solid var(--border-color);
+        overflow: hidden;
+      }
+
+      .screenshot-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+        transition: transform 0.5s ease;
+      }
+
+      .card:hover .screenshot-wrapper img {
+        transform: scale(1.04);
+      }
+
+      /* Fallback layout pattern when image file is missing */
+      .screenshot-fallback {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        font-family: monospace;
+        letter-spacing: 0.05em;
+      }
+
+      .card-body {
+        padding: 1.75rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+      }
+
+      .badge-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .tag {
+        font-size: 0.75rem;
+        font-weight: 600;
+        padding: 0.15rem 0.6rem;
+        border-radius: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text-secondary);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+
+        /* Add these two lines to force compact, inline sizing */
+        display: inline-block;
+        width: fit-content;
+      }
+
+      .tag.html {
+        color: var(--tag-html);
+        background: rgba(227, 76, 38, 0.1);
+      }
+      .tag.css {
+        color: var(--tag-css);
+        background: rgba(38, 77, 228, 0.1);
+      }
+      .tag.sass {
+        color: var(--tag-sass);
+        background: rgba(204, 102, 153, 0.1);
+      }
+      .tag.bootstrap {
+        color: var(--tag-bs);
+        background: rgba(121, 82, 179, 0.1);
+      }
+      .tag.grid {
+        color: var(--tag-grid);
+        background: rgba(16, 185, 129, 0.1);
+      }
+      .tag.flexbox {
+        color: var(--tag-flex);
+        background: rgba(168, 85, 247, 0.1);
+      }
+
+      .card-title {
+        font-size: 1.35rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        margin-bottom: 0.75rem;
+      }
+
+      .card-description {
+        color: var(--text-secondary);
+        font-size: 0.95rem;
+        margin-bottom: 1.75rem;
+        flex-grow: 1;
+        line-height: 1.6;
+      }
+
+      .card-footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: auto;
+        padding-top: 1rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.05);
+      }
+
+      .card-link {
+        display: inline-flex;
+        align-items: center;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        transition: color 0.2s ease;
+      }
+
+      .card-link svg {
+        margin-left: 0.5rem;
+        transition: transform 0.2s ease;
+      }
+
+      .card:hover .card-link svg {
+        transform: translateX(4px);
+      }
+
+      .app-status {
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        font-family: monospace;
+      }
+
+      footer {
+        margin-top: 6rem;
+        text-align: center;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        border-top: 1px solid var(--border-color);
+        padding-top: 2rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="header-content">
+          <h1>UI Studio <span>Workspace</span></h1>
+          <p>
+            A high-fidelity monorepo workspace preserving legacy interface
+            slicing architectures, responsive framework systems, and vanilla
+            layout patterns.
+          </p>
+          <div class="stats-bar">
+            <div class="stats-item">
+              <span class="stats-dot"></span> 16 Independent Targets
+            </div>
+            <div class="stats-item" style="color: var(--text-muted)">|</div>
+            <div class="stats-item">Vite Compiling Local Server</div>
+          </div>
+        </div>
+      </header>
+
+      <main class="grid">
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/panda-commerce.jpg"
+              alt="Panda Commerce Sandbox"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: panda-commerce.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag html">HTML5</span>
+              <span class="tag css">CSS3</span>
+              <span class="tag flexbox">Flexbox</span>
+            </div>
+            <h3 class="card-title">Panda Commerce</h3>
+            <p class="card-description">
+              Classic multi-row retail storefront template analyzing product
+              showcase grids, navigation trees, and card alignment mechanics.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/panda-commerce/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/panda-commerce</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/convention-center.jpg"
+              alt="Convention Center Sandbox"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: convention-center.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag html">HTML5</span>
+              <span class="tag bootstrap">Bootstrap</span>
+              <span class="tag css">Responsive</span>
+            </div>
+            <h3 class="card-title">Convention Center</h3>
+            <p class="card-description">
+              Event coordination layout built to test Bootstrap container rules,
+              column splitting break points, and accordion modules.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/convention-center/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/convention-center</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/singlepage-site.jpg"
+              alt="Singlepage Site Sandbox"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: singlepage-site.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag html">HTML5</span>
+              <span class="tag css">Vanilla CSS</span>
+            </div>
+            <h3 class="card-title">Singlepage Site</h3>
+            <p class="card-description">
+              A pure continuous scrolling layout optimizing standard semantic
+              layout wrappers and component continuity rules.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/singlepage-site/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/singlepage-site</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/football-site.jpg"
+              alt="Football Site"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: football-site.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag html">HTML5</span>
+              <span class="tag css">Media Queries</span>
+            </div>
+            <h3 class="card-title">Football Site</h3>
+            <p class="card-description">
+              Dense statistics dashboard managing complex data rows, schedule
+              frameworks, and asset-heavy match blocks.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/football-site/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/football-site</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/simple-portfolio.jpg"
+              alt="Simple Portfolio"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: simple-portfolio.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag html">UI Layout</span>
+              <span class="tag css">Typography</span>
+            </div>
+            <h3 class="card-title">Simple Portfolio</h3>
+            <p class="card-description">
+              Minimal layout exploring vertical content paths, baseline
+              typography alignments, and minimal footprint link sets.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/simple-portfolio/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/simple-portfolio</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/final-theme-sass.jpg"
+              alt="Final Theme Sass"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: final-theme-sass.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag sass">Sass Architecture</span>
+              <span class="tag grid">Grid Engine</span>
+            </div>
+            <h3 class="card-title">Final Theme Sass</h3>
+            <p class="card-description">
+              Deep stylesheet workspace tracking automated mixins, global
+              variable mapping, nested selectors, and dynamic style builds.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/final-theme-sass/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/final-theme-sass</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/nexter-grid.jpg"
+              alt="Nexter Grid Layout"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: nexter-grid.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag sass">Sass</span>
+              <span class="tag grid">Advanced CSS Grid</span>
+            </div>
+            <h3 class="card-title">Nexter Grid</h3>
+            <p class="card-description">
+              High-end real estate concept dashboard built completely using
+              asymmetrical CSS Grid lines and auto-fit repeat tracks.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/nexter-grid/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/nexter-grid</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/trillo-flexbox.jpg"
+              alt="Trillo Flexbox Layout"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: trillo-flexbox.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag sass">Sass</span>
+              <span class="tag flexbox">Complex Flexbox</span>
+            </div>
+            <h3 class="card-title">Trillo Flexbox</h3>
+            <p class="card-description">
+              All-in-one horizontal and vertical booking application dashboard
+              built completely on nested Flexbox containers.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/trillo-flexbox/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/trillo-flexbox</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/scss-animation.jpg"
+              alt="SCSS Animation Sandbox"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: scss-animation.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag sass">SCSS</span>
+              <span class="tag css">Keyframes</span>
+            </div>
+            <h3 class="card-title">SCSS Animation</h3>
+            <p class="card-description">
+              Sandbox interface mapping hardware-accelerated transitions, custom
+              easing definitions, and interactive UI states.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/scss-animation/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/scss-animation</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/flone-assignment.jpg"
+              alt="Flone Retail View"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: flone-assignment.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag bootstrap">Bootstrap CDN</span>
+              <span class="tag sass">SCSS</span>
+            </div>
+            <h3 class="card-title">Flone Assignment</h3>
+            <p class="card-description">
+              E-commerce concept framework utilizing custom overrides on
+              structural grid layers and card components.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/flone-assignment/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/flone-assignment</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/blog-practice.jpg"
+              alt="Blog Text Framework"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: blog-practice.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag html">Typography</span>
+              <span class="tag css">Flow</span>
+            </div>
+            <h3 class="card-title">Blog Practice</h3>
+            <p class="card-description">
+              Text-heavy structure parsing strict layout elements, line-height
+              proportions, and media side layouts.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/blog-practice/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/blog-practice</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/microsoft-clone.jpg"
+              alt="Microsoft Homepage Clone"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: microsoft-clone.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag html">HTML5</span>
+              <span class="tag css">Pixel-Perfect</span>
+            </div>
+            <h3 class="card-title">Microsoft Clone</h3>
+            <p class="card-description">
+              Highly precise reproduction of the global enterprise interface
+              mapping hero sections, grids, and icon layouts.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/microsoft-clone/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/microsoft-clone</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/flexbox-practice.jpg"
+              alt="Flexbox Testing Suite"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: flexbox-practice.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag flexbox">Flex-Box</span>
+              <span class="tag css">Alignments</span>
+            </div>
+            <h3 class="card-title">Flexbox Practice</h3>
+            <p class="card-description">
+              Technical utility sandbox exploring component centering,
+              distribution spacing, and dynamic item wrapping properties.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/flexbox-practice/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/flexbox-practice</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/eschool.jpg"
+              alt="eSchool Landing Grid"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: eschool.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag html">HTML5</span>
+              <span class="tag css">CSS Grid</span>
+            </div>
+            <h3 class="card-title">eSchool</h3>
+            <p class="card-description">
+              Educational portal template processing layout cards, metrics
+              lines, and call-to-action blocks.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/eschool/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/eschool</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/personal-website.jpg"
+              alt="Early Personal Frame"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: personal-website.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag html">Vanilla HTML</span>
+              <span class="tag css">Static Asset</span>
+            </div>
+            <h3 class="card-title">Personal Website</h3>
+            <p class="card-description">
+              Baseline personal timeline landing frame documenting early
+              directory paths and raw style setups.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/personal-website/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/personal-website</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="screenshot-wrapper">
+            <img
+              src="./images/project-portfolio.jpg"
+              alt="Interactive Portfolio Gallery"
+              onerror="this.style.display = 'none'"
+            />
+            <div class="screenshot-fallback">
+              [ Missing Image: project-portfolio.jpg ]
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="badge-container">
+              <span class="tag css">Media Flex</span>
+              <span class="tag grid">UI Grid</span>
+            </div>
+            <h3 class="card-title">Project Portfolio</h3>
+            <p class="card-description">
+              A responsive layout parsing creative layouts, card arrays, and
+              component styling systems.
+            </p>
+            <div class="card-footer">
+              <a href="./apps/project-portfolio/index.html" class="card-link">
+                Launch App
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M5 12l4-4-4-4" />
+                </svg>
+              </a>
+              <span class="app-status">public/apps/project-portfolio</span>
+            </div>
+          </div>
+        </article>
+      </main>
+
+      <footer>
+        <p>&copy; 2026 UI Studio • Layout Engineering Ecosystem</p>
+      </footer>
+    </div>
+  </body>
+</html>
