@@ -1,1 +1,1 @@
-# panda-commerce-jodipok
+# panda-commerce
