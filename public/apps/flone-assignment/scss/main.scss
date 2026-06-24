@@ -1,53 +1,43 @@
-// google fonts
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap");
+@use "sass:meta";
+@use "variables";
 
+// 1. Google Fonts
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap");
 
-// BOOTSTRAP ICONs
-// @import url("../node_modules/bootstrap-icons/font/bootstrap-icons.css");
+// 2. Custom Configuration Variables (MOVED HERE)
 
-// Custom.scss
-// custom color
-$body-bg: #fcfcfc;
-$font-family-sans-serif: "Poppins", sans-serif;
-$link-hover-color: #a749ff;
-$nav-link-hover-color: #a749ff;
-//  Include all of Bootstrap
-// @import "../node_modules/bootstrap/scss/bootstrap";
+// 3. Application Domain Modules
+@include meta.load-css("nav");
+@include meta.load-css("animation");
+@include meta.load-css("sidebar");
+@include meta.load-css("products");
+@include meta.load-css("shop-product");
+@include meta.load-css("footer");
+@include meta.load-css("loginregister");
+@include meta.load-css("contact");
 
-// Then add additional custom code here
-
+// 4. Global Structural Rules
 body {
   font-size: 0.625%;
-  background-color: $body-bg;
+  background-color: variables.$body-bg;
   max-width: 1920px;
   min-height: 100vh;
 }
-
-@import "variables";
-@import "nav";
-@import "animation";
-@import "sidebar";
-@import "products";
-@import "shop-product";
-@import "footer";
 
 .container {
   max-width: 1200px;
 }
 
-// support starts
-
+// 5. Support Features Component
 .support {
   margin-top: 10rem;
-
   .support-wrapper {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding: 3.6rem 1rem 3rem;
-    // background: #fdfdfd;
     border: 0.5rem solid #fff;
 
     .animated {
@@ -82,21 +72,11 @@ body {
     .shake-icon {
       margin-bottom: 2.5rem;
     }
-
     h6 {
       margin-top: 2rem;
     }
-
     &:hover .animated {
       animation: icon-animation 0.5s ease-in-out 0s 1 normal none running;
     }
   }
 }
-
-// login register
-
-@import "loginregister";
-
-// contact form
-
-@import "contact";

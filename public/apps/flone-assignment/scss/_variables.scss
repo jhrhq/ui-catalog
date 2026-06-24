@@ -7,9 +7,10 @@ $theme-color: #a749ff;
 $footer-bg: #f1f1f1;
 $breadcrumb-bg: #f7f7f7;
 
-
-
-
+$body-bg: #fcfcfc;
+$font-family-sans-serif: "Poppins", sans-serif;
+$link-hover-color: #a749ff;
+$nav-link-hover-color: #a749ff;
 
 // Responsive
 @mixin breakpoint($point) {

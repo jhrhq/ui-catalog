@@ -1,20 +1,23 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
+
 .story {
     width: 75%;
     margin: 0 auto;
-    box-shadow: 0 3rem 6rem rgba($color-black, .1);
-    background-color: rgba($color-white, 0.6);
+    box-shadow: 0 3rem 6rem rgba(variables.$color-black, .1);
+    background-color: rgba(variables.$color-white, 0.6);
     border-radius: 3px;
     padding: 6rem;
     padding-left: 9rem;
-    font-size: $default-font-size;
+    font-size: variables.$default-font-size;
     transform: skew(-12deg);
     
-    @include respond (tab-port) {
+    @include mixins.respond (tab-port) {
         width: 100%;
         padding: 4rem;
         padding-left: 7rem;
     }
-    @include respond (phone) {
+    @include mixins.respond (phone) {
         transform: skew(0)
     }
 
@@ -34,7 +37,7 @@
 
         backface-visibility: hidden;
 
-        @include respond (phone) {
+        @include mixins.respond (phone) {
         transform: translateX(-3rem) skewX(0);
     }
     }
@@ -59,7 +62,7 @@
         font-size: 1.7rem;
         text-transform: uppercase;
         text-align: center;
-        color: $color-white;
+        color: variables.$color-white;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -20%);

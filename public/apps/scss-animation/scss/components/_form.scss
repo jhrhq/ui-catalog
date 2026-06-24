@@ -1,3 +1,6 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
+
 .form {
 
     &__group:not(:last-child) {
@@ -11,29 +14,29 @@
         color: inherit;
         padding: 1.5rem 2rem;
         border-radius: 2px;
-        background-color: rgba($color-white, .5);
+        background-color: rgba(variables.$color-white, .5);
         border: none;
         border-bottom: 3px solid transparent;
         width: 90%;
         display: block;
         transition: all .3s;
 
-         @include respond(tab-port) {
+         @include mixins.respond(tab-port) {
             width: 100%;
         }
 
           &:focus {
             outline: none;
-            box-shadow: 0 1rem 2rem rgba($color-black, .1);
-            border-bottom: 3px solid $color-primary;
+            box-shadow: 0 1rem 2rem rgba(variables.$color-black, .1);
+            border-bottom: 3px solid variables.$color-primary;
             
               &:invalid {
-              border-bottom: 3px solid $color-secondary-dark;
+              border-bottom: 3px solid variables.$color-secondary-dark;
              } 
             }
 
             &::-webkit-input-placeholder {
-                color: $color-grey-darker;
+                color: variables.$color-grey-darker;
             }
 
             
@@ -68,7 +71,7 @@
     }
 
     &__radio-label {
-        font-size: $default-font-size;
+        font-size: variables.$default-font-size;
         position: relative;
         padding-left: 5rem;
 }
@@ -96,7 +99,7 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background-color: $color-primary;
+            background-color: variables.$color-primary;
             transition: opacity .2s;
         }
     }

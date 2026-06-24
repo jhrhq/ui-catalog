@@ -1,6 +1,8 @@
+@use "base";
+
 .header {
-    background: $color-grey-dark-1;
-    background-image: linear-gradient(rgba($color-secondary, .93), rgba($color-secondary, .93)), url(../img/hero.jpeg);
+    background: base.$color-grey-dark-1;
+    background-image: linear-gradient(rgba(base.$color-secondary, .93), rgba(base.$color-secondary, .93)), url(../img/hero.jpeg);
     background-size: cover;
     background-position: center;
     grid-column: full-start / col-end 6;
@@ -25,7 +27,7 @@
     }
     &__seenon-text{
         // justify-self: center;
-        color: $color-grey-light-1;
+        color: base.$color-grey-light-1;
         font-size: 1.6rem;
 
         display: grid;

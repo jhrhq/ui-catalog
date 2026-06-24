@@ -1,3 +1,5 @@
+@use "../abstract/variables";
+
 
 .btn {
     &,
@@ -22,7 +24,7 @@
 
     &:hover {
         transform: translate(-3px);
-        box-shadow: 0 10px 20px rgba($color-black, 0.3);
+        box-shadow: 0 10px 20px rgba(variables.$color-black, 0.3);
 
          
     &::after {
@@ -36,25 +38,25 @@
     &:focus {
         outline: none;
         transform: translate(-1px);
-        box-shadow: 0 5px 10px rgba($color-black, 0.2);
+        box-shadow: 0 5px 10px rgba(variables.$color-black, 0.2);
     }
 
     &--white {
-    background: $color-white;
-    color: $color-grey-dark;
+    background: variables.$color-white;
+    color: variables.$color-grey-dark;
 
     &::after {
-        background: $color-white;
+        background: variables.$color-white;
     }
 
     }
 
     &--green {
-    background: $color-primary;
-    color: $color-white;
+    background: variables.$color-primary;
+    color: variables.$color-white;
 
     &::after {
-        background: $color-primary;
+        background: variables.$color-primary;
     }
 
     }
@@ -83,24 +85,24 @@
 .btn-text {
     &:link,
     &:visited {
-        font-size: $default-font-size;
-        color: $color-primary;
+        font-size: variables.$default-font-size;
+        color: variables.$color-primary;
         text-decoration: none;
         display: inline-block;
-        border-bottom: 1px solid $color-primary;
+        border-bottom: 1px solid variables.$color-primary;
         padding: 3px;
         transition: all .2s;
     }
 
     &:hover {
-        background: $color-primary;
-        color: $color-white;
-        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        background: variables.$color-primary;
+        color: variables.$color-white;
+        box-shadow: 0 1rem 2rem rgba(variables.$color-black, .15);
         transform: translateY(-2px);
     }
 
     &:active {
-        box-shadow: 0 0.5rem 1rem rgba($color-black, .15);
+        box-shadow: 0 0.5rem 1rem rgba(variables.$color-black, .15);
         transform: translateY(0);
     }
 }

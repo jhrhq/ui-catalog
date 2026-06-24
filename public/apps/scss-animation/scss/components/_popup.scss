@@ -1,3 +1,5 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
 
 
 .popup {
@@ -7,7 +9,7 @@
     position: fixed;
     top: 0;
     left:0;
-    background: rgba($color-black, .8);
+    background: rgba(variables.$color-black, .8);
     z-index: 99999;
 
     opacity: 0;
@@ -23,8 +25,8 @@
         transform: translate(-50%, -50%);
         width: 75%;
         height: 50rem;
-        background-color: $color-white;
-        box-shadow: 0 2rem 4rem rgba($color-black, .2);
+        background-color: variables.$color-white;
+        box-shadow: 0 2rem 4rem rgba(variables.$color-black, .2);
         
         display: table;
         overflow: hidden;
@@ -32,7 +34,7 @@
         transform: translate(-50%, -50%) scale(.25);
         transition: all .5s .2s;
 
-        @include respond(tab-port) {
+        @include mixins.respond(tab-port) {
             width: 90%;
             height: 95vh;
             display: block;
@@ -46,7 +48,7 @@
         padding: 3.5rem 0rem 0rem 2rem;
 
         
-        @include respond(tab-port) {
+        @include mixins.respond(tab-port) {
             width: 100%;
             display: block;
             // padding:  3.5rem 0rem 0rem 2rem;
@@ -60,7 +62,7 @@
         vertical-align: middle;
         padding: 2rem 5rem;
 
-        @include respond(tab-port) {
+        @include mixins.respond(tab-port) {
             width: 100%;
             display: block;
         }
@@ -78,7 +80,7 @@
         column-gap: 4rem;
         hyphens: auto;
 
-        @include respond(tab-port) {
+        @include mixins.respond(tab-port) {
             width: 100%;
             display: block;
             column-count: 0;
@@ -101,7 +103,7 @@
     &__close {
         &:link,
         &:visited {
-            color: $color-grey-dark;
+            color: variables.$color-grey-dark;
             position: absolute;
             text-decoration: none;
             top: 2.5rem;
@@ -110,13 +112,13 @@
             display: inline-block;
             transition: all .3s;
 
-            @include respond(tab-port) {
-            color: $color-grey-dark;
+            @include mixins.respond(tab-port) {
+            color: variables.$color-grey-dark;
         }
         }
 
         &:hover {
-            color: $color-primary; 
+            color: variables.$color-primary; 
         }
     }
 

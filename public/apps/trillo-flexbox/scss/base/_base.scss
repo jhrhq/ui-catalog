@@ -1,39 +1,38 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,600;1,700;1,800&display=swap');
-
-
-
+@use "../abstracts/variables";
 
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
-
 html {
-    box-sizing: border-box;
-    font-size: 62.5%;  //1rem = 10pixel , 10px /16 = 62.5%
+  box-sizing: border-box;
+  font-size: 62.5%;
 
-
-    @media only screen and (max-width: bp-large) {
-            font-size: 50%;  //1rem = 8pixel , 16px/8 = 62.5%
-    }
-    @media only screen and (max-width: bp-medium) {
-            font-size: 30%;  //1rem = 8pixel , 16px/8 = 62.5%
-    }
-    
+  // 2. Prepend the 'variables.' namespace to your breakpoints
+  @media only screen and (max-width: variables.$bp-large) {
+    font-size: 50%;
+  }
+  @media only screen and (max-width: variables.$bp-medium) {
+    font-size: 30%;
+  }
 }
 
 body {
-    background: linear-gradient(to right bottom, $color-primary, $color-primary-dark);
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-
-    color: $color-grey-dark;
+  // 3. Prepend the 'variables.' namespace here as well
+  background: linear-gradient(
+    to right bottom,
+    variables.$color-primary,
+    variables.$color-primary-dark
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: variables.$color-grey-dark;
 }

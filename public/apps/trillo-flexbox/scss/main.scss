@@ -1,32 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,600;1,700;1,800&display=swap');
+// 1. All modern @use module loads MUST go first
+@use "abstracts/functions";
+@use "abstracts/mixins";
+@use "abstracts/variables";
+@use "base/base";
+@use "base/typography";
+@use "components/components";
+@use "components/button";
+@use "layout/layout";
+@use "layout/header";
+@use "layout/navigation";
+@use "pages/home";
 
-@import "abstracts/functions";
-@import "abstracts/mixins";
-@import "abstracts/variables";
-
-
-
-// @import "base/animation";
-@import "base/base";
-@import "base/typography";
-// @import "base/utility";
-
-
-@import "components/components";
-@import "components/button";
-// @import "components/card";
-// @import "components/composition";
-// @import "components/feature-box";
-// @import "components/form";
-// @import "components/popup";
-// @import "components/story";
-
-@import "layout/layout";
-// @import "layout/footer";
-@import "layout/header";
-@import "layout/navigation";
-
-@import "pages/home";
-
-
-
+// 2. Plain CSS text strings and font face files go underneath module imports
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,600;1,700;1,800&display=swap");

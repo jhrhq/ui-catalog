@@ -1,3 +1,5 @@
+@use "../abstract/mixins";
+
 *,
 *::before,
 *::after {
@@ -9,22 +11,22 @@
 html {
     // defines what 1 rem is
     font-size: 62.5%;
-    @include respond (big-desktop) {
+    @include mixins.respond (big-desktop) {
        font-size: 75%;
     }
 
-    @include respond (tab-land) {
+    @include mixins.respond (tab-land) {
        font-size: 56.25%;
     }
 
-    @include respond (1080) {
+    @include mixins.respond (1080) {
        font-size: 50%;
     }
 
-    @include respond (tab-port) {
+    @include mixins.respond (tab-port) {
        font-size: 40%;
     }
-    @include respond (phone) {
+    @include mixins.respond (phone) {
        font-size: 40%;
     }
 
@@ -34,7 +36,7 @@ body {
     box-sizing: border-box;
     padding: 3rem;
 
-      @include respond (tab-port) {
+      @include mixins.respond (tab-port) {
        padding: 0;
     }
 

@@ -1,3 +1,6 @@
+@use "../abstract/mixins";
+@use "../abstract/variables";
+
 .navigation {
     &__checkbox {
         display: none;
@@ -5,7 +8,7 @@
 
     &__button {
         text-align: center;
-        background: $color-white;
+        background: variables.$color-white;
         height: 7rem;
         width: 7rem;
         border-radius: 50%;
@@ -13,11 +16,11 @@
         top: 6rem;
         right: 6rem;
         z-index: 2000;
-        box-shadow: 0 1rem 3rem rgba($color-black, .1);
+        box-shadow: 0 1rem 3rem rgba(variables.$color-black, .1);
         cursor: pointer;
         // position: relative;  // come back here
         
-        @include respond(tab-port) {
+        @include mixins.respond(tab-port) {
             height: 5rem;
         width: 5rem;
         }
@@ -29,11 +32,11 @@
             top: 3.5rem;
             left: 2rem;
 
-            @include respond(tab-port) {
+            @include mixins.respond(tab-port) {
                 top: 2.5rem;
                 left: 1rem;
             }
-            @include respond(phone) {
+            @include mixins.respond(phone) {
                 top: 2.5rem;
                 left: 1.2rem;
             }
@@ -47,11 +50,11 @@
         position: fixed;
         top: 6.5rem;
         right: 6.5rem;
-        background-image: radial-gradient($color-primary-light, $color-primary-dark );
+        background-image: radial-gradient(variables.$color-primary-light, variables.$color-primary-dark );
         z-index: 1000;
         transition: transform 0.8s cubic-bezier(0.86, 0.07, 1);
 
-         @include respond(tab-port) {
+         @include mixins.respond(tab-port) {
             height: 4.5rem;
             width: 4.5rem;
         }
@@ -94,7 +97,7 @@
         display: inline-block;
         text-decoration: none;
         cursor: pointer;
-        color: $color-white;
+        color: variables.$color-white;
         font-size: 3rem;
         font-weight: 300;
         padding: 1rem 2rem;
@@ -102,7 +105,7 @@
         background-image: linear-gradient(120deg, 
                                 transparent 0%,
                                 transparent 50%,
-                                $color-white 50%);
+                                variables.$color-white 50%);
         background-size: 300%;
         transition: all .5s;
 
@@ -116,7 +119,7 @@
         &:hover,
         &:active {
             background-position: 100%;
-            color: $color-primary;
+            color: variables.$color-primary;
             transform: translateX(1rem);
         }
        
@@ -140,10 +143,10 @@
         &::after {
             width: 3rem;
             height: 2px;
-            background-color: $color-grey-darkest;
+            background-color: variables.$color-grey-darkest;
             display: inline-block;
 
-            @include respond(phone) {
+            @include mixins.respond(phone) {
                 width: 2.5rem;
             }
         }
@@ -159,18 +162,18 @@
         &::before{ top: -1.9rem;
         
             
-            @include respond(tab-port) {
+            @include mixins.respond(tab-port) {
                 top: -1.9rem;
             }
         }
         &::after {
             top: -3.5rem;
-            @include respond(1080) {
+            @include mixins.respond(1080) {
                 top: -3.1rem;
             }
         }
 
-         @include respond(tab-port) {
+         @include mixins.respond(tab-port) {
              &::before{ top: -1.7rem;}
             &::after {
             top: -3.2rem

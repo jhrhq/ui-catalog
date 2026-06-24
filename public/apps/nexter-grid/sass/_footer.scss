@@ -1,7 +1,9 @@
+@use "base";
+
 .footer {
     grid-column: full-start / full-end;
 
-    background: $color-secondary;
+    background: base.$color-secondary;
     padding: 8rem;
 }
 
@@ -20,7 +22,7 @@
     &__link:link,
     &__link:visited {
         font-size: 1.4rem;
-        font-family: $font-display;
+        font-family: base.$font-display;
         text-transform: uppercase;
         text-align: center;
         color: #fff;
@@ -40,7 +42,7 @@
 
 .copyright {
     font-size: 1.4rem;
-    color: $color-grey-light-2;
+    color: base.$color-grey-light-2;
     margin-top: 6rem;
     margin-left: auto;
     margin-right: auto;
