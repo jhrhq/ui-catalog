@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  width: 100%;
+}
+/* first section */
+.divider {
+  display: flex;
+  align-items: center;
+}
+.half {
+  width: 100%;
+  margin: 10px;
+  padding: 10px;
+}
+
+.half img {
+  width: 70%;
+}
+.header1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+.header2 {
+  margin-bottom: 15px;
+}
+.para {
+  margin-bottom: 15px;
+}
+
+.link {
+  padding: 10px 20px;
+  display: inline-block;
+  background: linear-gradient(to left, #ff512f, #f09819);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+/* second section */
+
+.second-part .header1 {
+  text-align: center;
+}
+.second-focusword {
+  color: #f09819;
+}
+.mission-parent {
+  margin: 10px;
+  padding: 10px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mission-child {
+  width: 25%;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.mission-child img {
+  width: 50%;
+  margin-bottom: 10px;
+}
+.mission-child h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.mission-child p {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.bgone {
+  background: #ebe8e7;
+}
+.bgtwo {
+  background: #fef2f2;
+}
+.bgthree {
+  background: #ffeee4;
+}
+/* third section */
+.order {
+  order: 2;
+}
+/* extra section */
+.extra {
+  width: 100%;
+}
+.extra .link {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.center {
+  text-align: center;
+}
+.extra-features {
+  text-align: center;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+
+.extra-features .para {
+  padding: 0 20px;
+}
+.extra-feature-split {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.feature1 {
+  padding-right: 10px;
+}
+.feature1 img {
+  width: 70%;
+}
+.feature2 {
+  padding-left: 10px;
+}
+
+.item-parent {
+  list-style: none;
+  font-size: 20px;
+  font-weight: 700;
+}
+.item-child {
+  margin-bottom: 8px;
+  padding: 5px;
+  background-color: #ebebeb;
+  display: block;
+}
+/* footer */
+.footer {
+  margin-top: 20px;
+  padding: 20px;
+  text-align: center;
+  background-color: #05152a;
+  color: #ffffff;
+}
+.footerhead {
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+.focusword {
+  color: #f09819;
+}
+.footertexts {
+  font-size: 12px;
+  color: #ffffff;
+}
