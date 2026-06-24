@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html {
+    // defines what 1 rem is
+    font-size: clamp(12px, calc(.8rem + .25vw), 20px);
+    font-weight: 400;
+    line-height: 1.7
+
+}
+
+body {
+    box-sizing: border-box;
+    padding: 1rem;
+
+}
+
+
