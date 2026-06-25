@@ -8,9 +8,9 @@ A collection of frontend projects developed throughout my learning journey, cove
 <tr>
 <td width="50%" valign="top">
 
-### 📰 Blog Practice
+### 📰 Blog
 
-<img src="./screenshots/blog-practice.png" alt="Blog Practice" />
+<img src="./screenshots/blog.png" alt="Blog " />
 
 Typography-focused reading experience with semantic content structures and responsive article layouts.
 
@@ -48,7 +48,7 @@ Modern educational landing page showcasing courses, features, and conversion-foc
 
 ### 🎨 Final Theme Sass
 
-<img src="./screenshots/final-theme-sass.png" alt="Final Theme Sass" />
+<img src="./screenshots/natours.png" alt="Final Theme Sass" />
 
 SCSS architecture playground exploring mixins, maps, loops, and reusable styling systems.
 
@@ -62,7 +62,7 @@ SCSS architecture playground exploring mixins, maps, loops, and reusable styling
 
 ### 📦 Flexbox Sandbox
 
-<img src="./screenshots/flexbox-practice.png" alt="Flexbox Sandbox" />
+<img src="./screenshots/flix-movies.png" alt="Flexbox Sandbox" />
 
 Interactive laboratory for understanding Flexbox alignment, growth, wrapping, and distribution patterns.
 
@@ -166,7 +166,7 @@ Interactive showcase highlighting projects, timelines, and frontend development 
 
 ### ✨ SCSS Animations
 
-<img src="./screenshots/scss-animation.png" alt="SCSS Animations" />
+<img src="./screenshots/natours.png" alt="SCSS Animations" />
 
 Motion-focused sandbox exploring keyframes, transitions, transforms, and interaction effects.
 
