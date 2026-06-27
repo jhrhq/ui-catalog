@@ -10,7 +10,7 @@ A collection of frontend projects developed throughout my learning journey, cove
 
 ### 📰 Blog
 
-<img src="./screenshots/blog.png" alt="Blog " />
+<img src="./public/images/blog.png" alt="Blog " />
 
 Typography-focused reading experience with semantic content structures and responsive article layouts.
 
@@ -22,7 +22,7 @@ Typography-focused reading experience with semantic content structures and respo
 
 ### 🏢 Convention Center
 
-<img src="./screenshots/convention-center.png" alt="Convention Center" />
+<img src="./public/images/convention-center.png" alt="Convention Center" />
 
 Event platform featuring pricing plans, session schedules, booking workflows, and responsive Bootstrap layouts.
 
@@ -36,7 +36,7 @@ Event platform featuring pricing plans, session schedules, booking workflows, an
 
 ### 🎓 eSchool Platform
 
-<img src="./screenshots/eschool.png" alt="eSchool Platform" />
+<img src="./public/images/eschool.png" alt="eSchool Platform" />
 
 Modern educational landing page showcasing courses, features, and conversion-focused sections.
 
@@ -46,9 +46,9 @@ Modern educational landing page showcasing courses, features, and conversion-foc
 
 <td valign="top">
 
-### 🎨 Final Theme Sass
+### 🎨 Natours
 
-<img src="./screenshots/natours.png" alt="Final Theme Sass" />
+<img src="./public/images/natours.png" alt="Final Theme Sass" />
 
 SCSS architecture playground exploring mixins, maps, loops, and reusable styling systems.
 
@@ -62,7 +62,7 @@ SCSS architecture playground exploring mixins, maps, loops, and reusable styling
 
 ### 📦 Flexbox Sandbox
 
-<img src="./screenshots/flix-movies.png" alt="Flexbox Sandbox" />
+<img src="./public/images/flix-movies.png" alt="Flexbox Sandbox" />
 
 Interactive laboratory for understanding Flexbox alignment, growth, wrapping, and distribution patterns.
 
@@ -74,7 +74,7 @@ Interactive laboratory for understanding Flexbox alignment, growth, wrapping, an
 
 ### 🛍️ Flone E-Commerce
 
-<img src="./screenshots/flone-assignment.png" alt="Flone E-Commerce" />
+<img src="./public/images/flone.png" alt="Flone E-Commerce" />
 
 Production-inspired storefront with modular Sass architecture and scalable commerce UI patterns.
 
@@ -88,7 +88,7 @@ Production-inspired storefront with modular Sass architecture and scalable comme
 
 ### ⚽ Football Portal
 
-<img src="./screenshots/football-site.png" alt="Football Portal" />
+<img src="./public/images/football-site.png" alt="Football Portal" />
 
 Sports dashboard showcasing match statistics, news feeds, standings, and layered grid layouts.
 
@@ -100,7 +100,7 @@ Sports dashboard showcasing match statistics, news feeds, standings, and layered
 
 ### 🖥️ Microsoft Home Clone
 
-<img src="./screenshots/microsoft-clone.png" alt="Microsoft Home Clone" />
+<img src="./public/images/microsoft-clone.png" alt="Microsoft Home Clone" />
 
 Pixel-perfect recreation emphasizing layout precision, responsive behavior, and design consistency.
 
@@ -114,7 +114,7 @@ Pixel-perfect recreation emphasizing layout precision, responsive behavior, and 
 
 ### 🏠 Nexter Real Estate
 
-<img src="./screenshots/nexter-grid.png" alt="Nexter Real Estate" />
+<img src="./public/images/nexter-grid.png" alt="Nexter Real Estate" />
 
 Premium real estate dashboard built with advanced CSS Grid techniques and editorial layouts.
 
@@ -126,7 +126,7 @@ Premium real estate dashboard built with advanced CSS Grid techniques and editor
 
 ### 🛒 Panda Commerce
 
-<img src="./screenshots/panda-commerce.png" alt="Panda Commerce" />
+<img src="./public/images/panda-ecommerce.png" alt="Panda Commerce" />
 
 Classic e-commerce storefront featuring product showcases, banners, and responsive shopping layouts.
 
@@ -140,7 +140,7 @@ Classic e-commerce storefront featuring product showcases, banners, and responsi
 
 ### 👨‍💻 Personal Hub Website
 
-<img src="./screenshots/personal-website.png" alt="Personal Hub Website" />
+<img src="./public/images/personal-website.png" alt="Personal Hub Website" />
 
 Centralized portfolio hub connecting projects, social platforms, and personal branding content.
 
@@ -152,7 +152,7 @@ Centralized portfolio hub connecting projects, social platforms, and personal br
 
 ### 📁 Project Portfolio
 
-<img src="./screenshots/project-portfolio.png" alt="Project Portfolio" />
+<img src="./public/images/project-portfolio.png" alt="Project Portfolio" />
 
 Interactive showcase highlighting projects, timelines, and frontend development experiments.
 
@@ -162,23 +162,12 @@ Interactive showcase highlighting projects, timelines, and frontend development 
 </tr>
 
 <tr>
-<td valign="top">
-
-### ✨ SCSS Animations
-
-<img src="./screenshots/natours.png" alt="SCSS Animations" />
-
-Motion-focused sandbox exploring keyframes, transitions, transforms, and interaction effects.
-
-**Tech:** SCSS · CSS Animations
-
-</td>
 
 <td valign="top">
 
 ### 📄 Simple Portfolio
 
-<img src="./screenshots/simple-portfolio.png" alt="Simple Portfolio" />
+<img src="./public/images/simple-portfolio.png" alt="Simple Portfolio" />
 
 Minimal portfolio experience designed around simplicity, readability, and clean presentation.
 
@@ -187,31 +176,6 @@ Minimal portfolio experience designed around simplicity, readability, and clean 
 </td>
 </tr>
 
-<tr>
-<td valign="top">
-
-### 🌐 Single Page UI
-
-<img src="./screenshots/singlepage-site.png" alt="Single Page UI" />
-
-Single-page experience featuring smooth scrolling, full-screen sections, and anchored navigation.
-
-**Tech:** Vanilla CSS3
-
-</td>
-
-<td valign="top">
-
-### ✈️ Trillo Booking App
-
-<img src="./screenshots/trillo-flexbox.png" alt="Trillo Booking App" />
-
-Travel booking dashboard powered by complex nested Flexbox layouts and adaptive navigation.
-
-**Tech:** Sass · Flexbox
-
-</td>
-</tr>
 </table>
 
 ---
