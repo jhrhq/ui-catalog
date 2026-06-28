@@ -197,13 +197,7 @@ Animation & Transitions
 
 ## Highlights
 
-✨ Responsive-first layouts
-
 🎨 Modern UI/UX patterns
-
-📱 Mobile-friendly interfaces
-
-🧩 Component-oriented structure
 
 ⚡ CSS Grid & Flexbox deep dives
 
